@@ -71,18 +71,18 @@
 // @lc code=start
 class Solution {
     func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
-        var res = n + m - 1
+        var k = n + m - 1
         var i = m - 1 
         var j = n - 1
         while j >= 0{ //TODO: m >= n 故而 num2 为循环跳出条件 j>=0 
             if i >= 0 && nums1[i] > nums2[j] {
-                nums1[res] = nums1[i]
+                nums1[k] = nums1[i]
                 i -= 1
             }else {
-                nums1[res] = nums2[j]
+                nums1[k] = nums2[j]
                 j -= 1
             }
-            res -= 1
+            k -= 1
         }
     }
 }
